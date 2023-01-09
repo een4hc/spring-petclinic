@@ -23,11 +23,12 @@ pipeline {
         sh 'docker build -t een4hc/spring-petclinic:latest .'
       }
     }
-    stage('Upload to Artifactory') {
-      agent {
-        docker {
-          image 'releases-docker.jfrog.io/jfrog/jfrog-cli-full-v2-jf jf -v'
-          reuseNode true
+     stage('Upload to Artifactory') {
+      agent any
+       {
+     //   docker {
+    //      image 'releases-docker.jfrog.io/jfrog/jfrog-cli-full-v2-jf jf -v'
+    //      reuseNode true
     }
     }
     steps {
